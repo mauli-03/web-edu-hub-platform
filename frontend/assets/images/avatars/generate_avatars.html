@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .avatar-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Avatar Generator</h1>
+    <p>This page generates placeholder avatar images for testing. Click the button below to save these avatars to your device.</p>
+    
+    <div class="avatar-container" id="avatarContainer">
+        <!-- Avatars will be generated here -->
+    </div>
+    
+    <button id="saveAvatars">Save All Avatars</button>
+    
+    <script>
+        // Names for avatars
+        const users = [
+            { name: 'Alex Johnson', id: 'user1' },
+            { name: 'Sophia Chen', id: 'user2' },
+            { name: 'Marcus Williams', id: 'user3' },
+            { name: 'Jamie Rivera', id: 'user4' },
+            { name: 'Taylor Smith', id: 'user5' },
+            { name: 'Jordan Lee', id: 'user6' }
+        ];
+        
+        // Colors for avatars
+        const colors = [
+            '#4285F4', // Blue
+            '#EA4335', // Red
+            '#FBBC05', // Yellow
+            '#34A853', // Green
+            '#8A2BE2', // Purple
+            '#FF6347', // Tomato
+            '#20B2AA', // Light Sea Green
+            '#FF8C00'  // Dark Orange
+        ];
+        
+        // Generate avatars
+        function generateAvatars() {
+            const container = document.getElementById('avatarContainer');
+            
+            users.forEach((user, index) => {
+                // Create avatar div
+                const avatar = document.createElement('div');
+                avatar.className = 'avatar';
+                avatar.style.backgroundColor = colors[index % colors.length];
+                
+                // Get initials from name
+                const nameParts = user.name.split(' ');
+                const initials = nameParts.map(part => part[0]).join('');
+                
+                avatar.textContent = initials;
+                avatar.dataset.name = user.name;
+                avatar.dataset.id = user.id;
+                
+                container.appendChild(avatar);
+            });
+        }
+        
+        // Save avatars as images
+        document.getElementById('saveAvatars').addEventListener('click', function() {
+            const avatars = document.querySelectorAll('.avatar');
+            
+            avatars.forEach(avatar => {
+                // Create a canvas element
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Set canvas dimensions
+                canvas.width = 100;
+                canvas.height = 100;
+                
+                // Draw circle background
+                ctx.fillStyle = avatar.style.backgroundColor;
+                ctx.beginPath();
+                ctx.arc(50, 50, 50, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Draw text
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 36px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(avatar.textContent, 50, 50);
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.download = `${avatar.dataset.id}.jpg`;
+                link.href = canvas.toDataURL('image/jpeg');
+                
+                // Trigger download
+                link.click();
+            });
+        });
+        
+        // Initialize
+        window.onload = generateAvatars;
+    </script>
+</body>
+</html> 

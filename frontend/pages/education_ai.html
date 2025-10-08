@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat UI</title>
+    <link rel="stylesheet" href="../css/ai.css">
+</head>
+<main>
+    <header>
+        <h1>GuideGuru</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Resources</a></li>
+                <li><a href="browse.html">Quick Browse</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="chat.html">Chats</a></li>
+                
+               
+            </ul>
+        </nav>
+        <button id="profile-button" class="btn-profile">Profile</button> <!-- Profile button -->
+    </header>
+    
+    <section class="chatbot">
+       
+        <h3>What can I help with?</h3>
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox"></div>
+            <div class="chatbot-search-container">
+                <input type="text" placeholder="Ask anything">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        
+
+        <div class="chatbot-btns-container">
+            <button class="chatbot-btn">Search</button>
+            <button class="chatbot-btn">Reason</button>
+            <button class="chatbot-btn">Create image</button>
+            <button class="chatbot-btn">Brainstorm</button>
+            <button class="chatbot-btn">Summarize text</button>
+            <button class="chatbot-btn">Get advice</button>
+            <button class="chatbot-btn">Analyze images</button>
+            <button class="chatbot-btn">More</button>
+        </div>
+    </section>   
+    </main>
+    <script type="module" src="../js/ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+/* Blog page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+/* Blog controls section */
+.blog-controls {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#blog-title {
+    padding: 12px;
+    
+    border-radius: 4px;
+    font-size: 16px;
+    color: #000;
+}
+
+#blog-content {
+    padding: 12px;
+    border: 1px solid #c55858;
+    border-radius: 4px;
+    min-height: 150px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+#add-blog-btn {
+    padding: 12px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-blog-btn:hover {
+    background-color: #3367d6;
+}
+
+/* Search container */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#search-blog {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#search-blog-btn {
+    padding: 0 20px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-blog-btn:hover {
+    background-color: #3367d6;
+}
+
+/* Blog grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.blog-description {
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.blog-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.blog-btn {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #fbbc05;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #f5a623;
+}
+
+.delete-btn {
+    background-color: #ea4335;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Pagination controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.page-indicator {
+    font-size: 16px;
+    color: #555;
+}
+
+.pagination-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-btn:hover {
+    background-color: #ddd;
+}
+
+.prev-btn {
+    background-color: #f1f1f1;
+}
+
+.next-btn {
+    background-color: #4285f4;
+    color: white;
+}
+
+.next-btn:hover {
+    background-color: #3367d6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+}
+
+/* Blog styling */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .blog-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .blog-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Blog card styling */
+.blog-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.25rem;
+}
+
+.blog-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.blog-excerpt {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.blog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* Pagination styling */
+.pagination,
+#pagination,
+#home-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.pagination button,
+#pagination button,
+#home-pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    min-width: 2.5rem;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+}
+
+.pagination button:disabled,
+#pagination button:disabled,
+#home-pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination .page-number,
+#pagination .page-number,
+#home-pagination .page-number {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .active,
+#pagination .active,
+#home-pagination .active {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+    border-color: #4f46e5;
+}
+
+.pagination button.prev-btn,
+.pagination button.next-btn,
+#pagination button.prev-btn,
+#pagination button.next-btn,
+#home-pagination button.prev-btn,
+#home-pagination button.next-btn {
+    background-color: #4f46e5;
+    color: white;
+    min-width: 5rem;
+}
+
+.pagination button.prev-btn:hover,
+.pagination button.next-btn:hover,
+#pagination button.prev-btn:hover,
+#pagination button.next-btn:hover,
+#home-pagination button.prev-btn:hover,
+#home-pagination button.next-btn:hover {
+    background-color: #4338ca;
+}
+
+/* Page count info */
+.pagination-info {
+    font-size: 0.875rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Responsive pagination for small screens */
+@media (max-width: 640px) {
+    .pagination,
+    #pagination,
+    #home-pagination {
+        flex-wrap: wrap;
+    }
+    
+    .pagination button,
+    #pagination button,
+    #home-pagination button {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+/* Form styling */
+.blog-form {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.btn-submit {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #4338ca;
+}
+
+/* Recent blogs section on home page */
+.recent-blogs {
+    padding: 3rem 5%;
+}
+
+.recent-blogs h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1e293b;
+}
+
+.view-all-blogs {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-all-link {
+    display: inline-block;
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.view-all-link:hover {
+    background-color: #4338ca;
+} 

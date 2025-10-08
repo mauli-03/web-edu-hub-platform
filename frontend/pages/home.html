@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub - Learn, Connect, Grow</title>
+    
+    <!-- Auto Navbar Script - For faster loading -->
+    <script src="../js/auto-navbar.js"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/interactive-cards.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> 
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Auth Script -->
+    <script src="../js/auth.js"></script>
+</head>
+<body>
+    <!-- Navigation - The navbar will be automatically loaded -->
+    <div id="navbar-placeholder"></div>
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Your Learning Journey Starts Here</h1>
+            <p>Connect with mentors, join communities, and unlock your potential</p>
+            <div class="hero-cta">
+                <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                <a href="community.html" class="btn btn-secondary">Join Community</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <h2 class="section-title">Why Choose Education Hub</h2>
+                    <p class="section-subtitle">We empower learners with tools and resources to achieve their educational goals</p>
+                </div>
+            </div>
+            
+            <div class="row feature-cards">
+                <!-- Feature 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Global Community</h3>
+                            <p>Connect with learners and educators from around the world. Expand your horizon with diverse perspectives.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-number">2M+</span>
+                                    <span class="stat-label">Users</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">180+</span>
+                                    <span class="stat-label">Countries</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="chat.html" class="feature-link">Join Community <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Top Universities</h3>
+                            <p>Explore prestigious universities and find detailed information about their programs, faculty, and admission requirements.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-number">300+</span>
+                                    <span class="stat-label">Universities</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">20+</span>
+                                    <span class="stat-label">Countries</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="university.html" class="feature-link">Explore Universities <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Diverse Courses</h3>
+                            <p>Access a wide range of courses across various disciplines, designed for learners at every level.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-number">1,200+</span>
+                                    <span class="stat-label">Courses</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">40+</span>
+                                    <span class="stat-label">Categories</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="courses.html" class="feature-link">Browse Courses <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon-wrapper">
+                            <div class="feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Interactive Forums</h3>
+                            <p>Engage in discussions, ask questions, and share insights with peers and experts in your field.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <span class="stat-number">50K+</span>
+                                    <span class="stat-label">Topics</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">24/7</span>
+                                    <span class="stat-label">Support</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="forums.html" class="feature-link">Join Discussions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="resources.html" class="btn btn-outline-primary btn-lg">Explore All Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Blogs -->
+    <section class="recent-blogs py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Latest From Our Blog</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with the newest ideas and trends in education from our community experts</p>
+            </div>
+            
+            <div id="blog-container" class="grid md:grid-cols-3 gap-6">
+                <!-- Blogs will be dynamically loaded here -->
+            </div>
+            
+            <!-- View All Blogs button -->
+            <div class="text-center mt-10">
+                <a href="blogs.html" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors shadow-md">
+                    View All Blogs <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="../js/home-blogs.js"></script>
+
+    <!-- Interactive Cards -->
+    <section class="interactive-cards">
+        <div class="container">
+            <h2 class="section-title">Explore Our Solutions</h2>
+            <p class="section-description">Discover innovative educational tools and services designed to enhance your learning experience</p>
+            
+            <div class="cards-grid">
+                <!-- Card 1: AI Integration -->
+                <div class="interactive-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>AI Integration</h3>
+                            <p>Smart learning powered by artificial intelligence</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>AI Features</h3>
+                            <ul>
+                                <li>Personalized learning paths</li>
+                                <li>Smart content recommendations</li>
+                                <li>Automated progress tracking</li>
+                                <li>Predictive performance analytics</li>
+                            </ul>
+                            <a href="#" class="card-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Virtual Classrooms -->
+                <div class="interactive-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3>Virtual Classrooms</h3>
+                            <p>Interactive online learning environments</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>Live video lectures</li>
+                                <li>Real-time collaboration tools</li>
+                                <li>Interactive whiteboards</li>
+                                <li>Breakout room discussions</li>
+                            </ul>
+                            <a href="#" class="card-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Career Guidance -->
+                <div class="interactive-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Career Guidance</h3>
+                            <p>Expert advice for your professional journey</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Our Services</h3>
+                            <ul>
+                                <li>Career assessment tools</li>
+                                <li>Industry mentor matching</li>
+                                <li>Resume building workshops</li>
+                                <li>Interview preparation</li>
+                            </ul>
+                            <a href="#" class="card-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Global Community -->
+                <div class="interactive-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Global Community</h3>
+                            <p>Connect with learners worldwide</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Community Benefits</h3>
+                            <ul>
+                                <li>International study groups</li>
+                                <li>Cultural exchange programs</li>
+                                <li>Collaborative projects</li>
+                                <li>Networking opportunities</li>
+                            </ul>
+                            <a href="#" class="card-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Education Hub is a platform dedicated to connecting learners with quality educational resources and fostering a community of knowledge sharing.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="courses.html"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="forums.html"><i class="fas fa-comments"></i> Forums</a></li>
+                    <li><a href="blogs.html"><i class="fas fa-blog"></i> Blogs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Pune, India</li>
+                    <li><i class="fas fa-phone"></i> +91 8010095340</li>
+                    <li><i class="fas fa-envelope"></i> info@educationhub.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subscribe</h4>
+                <p>Stay updated with our latest news and offers.</p>
+                <form class="footer-subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Help Center</a>
+            </div>
+            <p>&copy; 2025 Education Hub. All rights reserved.</p>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+    
+    <!-- Add the footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- JavaScript for footer functionality -->
+    <script src="../js/footer.js"></script>
+
+    <!-- Auth state update script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in and update navbar
+            const token = localStorage.getItem('token');
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            // Try all possible ways to update the navbar
+            setTimeout(function() {
+                if (typeof updateNavbarAuthState === 'function') {
+                    updateNavbarAuthState();
+                } else if (window.updateNavbarAuthState) {
+                    window.updateNavbarAuthState();
+                } else if (typeof checkAndUpdateNavbarAuth === 'function') {
+                    checkAndUpdateNavbarAuth();
+                } else if (window.checkAndUpdateNavbarAuth) {
+                    window.checkAndUpdateNavbarAuth();
+                } else {
+                    console.log('Manual navbar auth state check');
+                    // Try to manually check
+                    const loggedOutButtons = document.getElementById('logged-out-buttons');
+                    const loggedInButtons = document.getElementById('logged-in-buttons');
+                    
+                    if (token) {
+                        // User is logged in
+                        if (loggedOutButtons) loggedOutButtons.classList.add('hidden');
+                        if (loggedInButtons) loggedInButtons.classList.remove('hidden');
+                        
+                        const userGreeting = document.getElementById('user-greeting');
+                        if (userGreeting && user.name) {
+                            userGreeting.textContent = `Hi, ${user.name}`;
+                        }
+                    }
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

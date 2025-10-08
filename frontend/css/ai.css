@@ -1,0 +1,516 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(213, 31%, 43%);
+    color: white;
+    padding: 10px 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+nav {
+    flex-grow: 1; /* Allow nav to take available space */
+    text-align: center; /* Center the nav items */
+}
+
+nav ul {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the nav items */
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between nav items */
+}
+
+.search-bar {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space from the nav */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/***** header index *****/ 
+
+.nav-buttons {
+    display: flex;
+    gap: 15px; /* Adds space between buttons */
+}
+
+.nav-buttons button {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-buttons button:hover {
+    background-color: #28a745;
+}
+
+/***** End header index *****/
+
+
+.btn-login {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.btn-register {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+
+}
+
+.btn-lang {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.btn-profile {
+    /* background-color: #28a745; */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+ /* Dropdown menu styling */
+ .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: white;
+    width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f0;
+}
+
+.hero {
+    text-align: center;
+    background: url('page/bg-1.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.search-bar {
+    margin-right: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 250px;
+}
+
+.search-button {
+    padding: 8px 8px;
+   /* margin-left: 15px; */
+}
+
+.categories {
+    padding: 20px;
+    background-color: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.category img {
+    width: 50px;
+    height: 50px;
+}
+
+.category h3 {
+    margin: 10px 0;
+}
+
+.explore-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.info {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.info h2 {
+    margin-bottom: 10px;
+}
+
+.learn-more-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+/***** books sample *****/ 
+
+.container {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.book-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    background: white;
+    padding: 15px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.book-card p {
+    font-size: 14px;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.read-btn, .download-btn, .save-btn {
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.read-btn {
+    background: #007bff;
+    color: white;
+}
+
+.download-btn {
+    background: #28a745;
+    color: white;
+}
+
+.save-btn {
+    background: #ffc107;
+    color: black;
+}
+
+/***** End books sample *****/
+
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: hsl(213, 31%, 43%);
+    color: white;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+  
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* browser chatbot */ 
+
+.chatbot {
+    background-color: white;
+    color: rgb(115, 104, 104);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chatbot h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.chatbot-search-container {
+    background-color: #796666;
+    border-radius: 30px;
+    padding: 10px;
+    width: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #252424;
+}
+
+.chatbot input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.chatbot-mic-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.chatbot-btns-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.chatbot-btn {
+    background-color: rgb(115, 104, 104);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.chatbot-btn:hover {
+    background-color: #333;
+}
+
+/* End browser chatbot */
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+.chat-container {
+    width: 400px;
+    height: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+.user-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+}

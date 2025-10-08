@@ -1,0 +1,185 @@
+<nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="../index.html" class="flex-shrink-0 flex items-center">
+                    <img class="h-10 w-auto" src="../images/logo.png" alt="EduHub Logo" onerror="this.onerror=null; this.style.display='none'; this.parentNode.insertAdjacentHTML('afterbegin', '<div class=\'flex items-center justify-center w-10 h-10 bg-orange-500 text-white font-bold rounded-md\'>E</div>')">
+                    <span class="ml-2 text-2xl font-bold text-[#FF6B35]">EduHub</span>
+                </a>
+                <div class="hidden md:ml-10 md:flex md:space-x-8">
+                    <a href="../pages/home.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-[#FF6B35]">
+                        <i class="fas fa-home mr-1"></i> Home
+                    </a>
+                    <a href="../pages/university.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-[#FF6B35]">
+                        <i class="fas fa-university mr-1"></i> Universities
+                    </a>
+                    <a href="../pages/courses.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-[#FF6B35]">
+                        <i class="fas fa-book mr-1"></i> Courses
+                    </a>
+                    <a href="../pages/blogs.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-[#FF6B35] text-sm font-medium text-[#FF6B35]">
+                        <i class="fas fa-blog mr-1"></i> Blogs
+                    </a>
+                    <a href="../pages/forums.html" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-[#FF6B35]">
+                        <i class="fas fa-comments mr-1"></i> Forums
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Logged out buttons -->
+            <div id="logged-out-buttons" class="hidden md:flex items-center space-x-4">
+                <a href="../pages/login.html" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md text-sm font-medium text-white bg-[#FF6B35] hover:bg-[#E84E10] shadow-sm transition-colors">
+                    <i class="fas fa-sign-in-alt mr-1"></i> Login
+                </a>
+                <a href="../pages/register.html" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 shadow-sm transition-colors">
+                    <i class="fas fa-user-plus mr-1"></i> Register
+                </a>
+            </div>
+            
+            <!-- Logged in buttons -->
+            <div id="logged-in-buttons" class="hidden md:flex items-center space-x-4">
+                <span id="user-greeting" class="text-sm font-medium text-gray-700">Hi, User</span>
+                <a href="../pages/profile.html" class="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-700 hover:text-[#FF6B35]">
+                    <i class="fas fa-user-circle mr-1"></i> Profile
+                </a>
+                <button id="logout-button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md text-sm font-medium text-white bg-[#FF6B35] hover:bg-[#E84E10] shadow-sm transition-colors">
+                    <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                </button>
+            </div>
+            
+            <div class="-mr-2 flex items-center md:hidden">
+                <!-- Mobile menu button -->
+                <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state -->
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="pt-2 pb-3 space-y-1">
+            <a href="../pages/home.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">
+                <i class="fas fa-home mr-1"></i> Home
+            </a>
+            <a href="../pages/university.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">
+                <i class="fas fa-university mr-1"></i> Universities
+            </a>
+            <a href="../pages/courses.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">
+                <i class="fas fa-book mr-1"></i> Courses
+            </a>
+            <a href="../pages/blogs.html" class="block pl-3 pr-4 py-2 border-l-4 border-[#FF6B35] text-base font-medium text-[#FF6B35] bg-orange-50">
+                <i class="fas fa-blog mr-1"></i> Blogs
+            </a>
+            <a href="../pages/forums.html" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">
+                <i class="fas fa-comments mr-1"></i> Forums
+            </a>
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-200">
+            <!-- Mobile logged out buttons -->
+            <div id="mobile-logged-out-buttons" class="flex items-center px-4 space-x-3">
+                <a href="../pages/login.html" class="block text-base font-medium text-gray-500 hover:text-gray-800">
+                    <i class="fas fa-sign-in-alt mr-1"></i> Login
+                </a>
+                <a href="../pages/register.html" class="block text-base font-medium text-gray-500 hover:text-gray-800">
+                    <i class="fas fa-user-plus mr-1"></i> Register
+                </a>
+            </div>
+            
+            <!-- Mobile logged in buttons -->
+            <div id="mobile-logged-in-buttons" class="hidden flex-col px-4 space-y-2">
+                <span id="mobile-user-greeting" class="text-base font-medium text-gray-700">Hi, User</span>
+                <a href="../pages/profile.html" class="block text-base font-medium text-gray-500 hover:text-gray-800">
+                    <i class="fas fa-user-circle mr-1"></i> Profile
+                </a>
+                <button id="mobile-logout-button" class="block text-base font-medium text-[#FF6B35] hover:text-[#E84E10]">
+                    <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Toggle mobile menu
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Check if user is logged in and update the navbar accordingly
+    function updateNavbarAuthState() {
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        
+        const loggedOutButtons = document.getElementById('logged-out-buttons');
+        const loggedInButtons = document.getElementById('logged-in-buttons');
+        const mobileLoggedOutButtons = document.getElementById('mobile-logged-out-buttons');
+        const mobileLoggedInButtons = document.getElementById('mobile-logged-in-buttons');
+        
+        if (token) {
+            // User is logged in
+            if (loggedOutButtons) loggedOutButtons.classList.add('hidden');
+            if (loggedInButtons) {
+                loggedInButtons.classList.remove('hidden');
+                
+                const userGreeting = document.getElementById('user-greeting');
+                if (userGreeting && user.name) {
+                    userGreeting.textContent = `Hi, ${user.name}`;
+                }
+            }
+            
+            // Mobile version
+            if (mobileLoggedOutButtons) mobileLoggedOutButtons.classList.add('hidden');
+            if (mobileLoggedInButtons) {
+                mobileLoggedInButtons.classList.remove('hidden');
+                
+                const mobileUserGreeting = document.getElementById('mobile-user-greeting');
+                if (mobileUserGreeting && user.name) {
+                    mobileUserGreeting.textContent = `Hi, ${user.name}`;
+                }
+            }
+        } else {
+            // User is logged out
+            if (loggedInButtons) loggedInButtons.classList.add('hidden');
+            if (loggedOutButtons) loggedOutButtons.classList.remove('hidden');
+            
+            // Mobile version
+            if (mobileLoggedInButtons) mobileLoggedInButtons.classList.add('hidden');
+            if (mobileLoggedOutButtons) mobileLoggedOutButtons.classList.remove('hidden');
+        }
+    }
+    
+    // Make the function globally available
+    window.updateNavbarAuthState = updateNavbarAuthState;
+    
+    // Handle logout button clicks
+    function setupLogoutButtons() {
+        const logoutButton = document.getElementById('logout-button');
+        const mobileLogoutButton = document.getElementById('mobile-logout-button');
+        
+        const handleLogout = function() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            localStorage.removeItem('currentUser');
+            window.location.href = '../pages/login.html';
+        };
+        
+        if (logoutButton) {
+            logoutButton.addEventListener('click', handleLogout);
+        }
+        
+        if (mobileLogoutButton) {
+            mobileLogoutButton.addEventListener('click', handleLogout);
+        }
+    }
+    
+    // Run on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateNavbarAuthState();
+        setupLogoutButtons();
+    });
+    
+    // Call immediately as well to handle when script loads after DOM is ready
+    updateNavbarAuthState();
+    setupLogoutButtons();
+</script> 

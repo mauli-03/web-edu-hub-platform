@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="../css/course.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../js/auto-navbar.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Explore Courses</h1>
+        
+        <!-- Search Container -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for courses...">
+            <button id="search-button">Search</button>
+        </div>
+        
+        <!-- Course Grid -->
+        <div id="course-grid" class="course-grid">
+            <!-- Courses will be dynamically loaded here -->
+        </div>
+        
+        <!-- Pagination Controls -->
+        <div id="pagination-controls" class="pagination-controls">
+            <!-- Pagination buttons will be added here -->
+        </div>
+    </div>
+    
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Education Hub is a platform dedicated to connecting learners with quality educational resources and fostering a community of knowledge sharing.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="courses.html"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="forums.html"><i class="fas fa-comments"></i> Forums</a></li>
+                    <li><a href="blogs.html"><i class="fas fa-blog"></i> Blogs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Pune, India</li>
+                    <li><i class="fas fa-phone"></i> +91 8010095340</li>
+                    <li><i class="fas fa-envelope"></i> info@educationhub.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subscribe</h4>
+                <p>Stay updated with our latest news and offers.</p>
+                <form class="footer-subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Help Center</a>
+            </div>
+            <p>&copy; 2025 Education Hub. All rights reserved.</p>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+    
+    <!-- Add the footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- JavaScript for footer functionality -->
+    <script src="../js/footer.js"></script>
+    
+    <script type="module" src="../js/courses.js"></script>
+</body>
+</html>

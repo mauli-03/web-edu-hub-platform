@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail | EduHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navbar-dark.css">
+    <style>
+        :root {
+            --primary-color: #FF6B35;
+            --primary-dark: #E84E10;
+            --primary-light: #FF8C61;
+            --accent-color: #FF9F1C;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --body-bg: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --border-color: #EEEEEE;
+        }
+
+        body {
+            background-color: var(--body-bg);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            padding-top: 70px; /* Add padding to body to prevent content overlap with fixed navbar */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-main);
+        }
+
+        .primary-color {
+            color: var(--primary-color);
+        }
+
+        .bg-primary-color {
+            background-color: var(--primary-color);
+        }
+
+        .text-primary-color {
+            color: var(--primary-color);
+        }
+        
+        .text-primary-dark {
+            color: var(--primary-dark);
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Blog Hero Styles */
+        .blog-hero {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../images/blog-default.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-hero-content {
+            max-width: 800px;
+        }
+
+        /* Card Styles */
+        .content-card, .sidebar-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
+        }
+
+        /* Blog Content Styles */
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            margin: 1.5rem 0;
+            background-color: #FFF8F3;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .blog-meta div {
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-meta i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Tags Styles */
+        .tag-item {
+            background-color: #FFF0E8;
+            color: var(--primary-color);
+            border: 1px solid #FFDBCC;
+            transition: all 0.3s ease;
+        }
+
+        .tag-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Share Buttons */
+        .share-btn {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-5px);
+            opacity: 0.9;
+        }
+
+        /* Comment Form */
+        .comment-form {
+            background-color: #FAFAFA;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .comment-form:hover {
+            border-color: var(--primary-light);
+        }
+
+        .comment-form-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .primary-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Sidebar Styles */
+        .author-card {
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .related-blogs-card .related-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin-top: 8px;
+        }
+
+        .newsletter-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 16px;
+        }
+
+        .accent-btn {
+            background-color: white;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .accent-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Animation Styles */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .page-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #content-section { animation-delay: 0.2s; }
+        #tags-section { animation-delay: 0.4s; }
+        #share-section { animation-delay: 0.6s; }
+        #comments-section { animation-delay: 0.8s; }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Loading animation */
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Comment Effect */
+        .comment-item {
+            transition: all 0.3s ease;
+        }
+
+        .comment-item:hover {
+            transform: translateX(5px);
+        }
+
+        /* Related Blog Card Effect */
+        .related-blog-item {
+            transition: all 0.3s ease;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .related-blog-item:hover {
+            background-color: #FFF0E8;
+            transform: translateX(5px);
+        }
+
+        /* Main navigation dark styles */
+        .main-navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Include -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Blog Hero Section -->
+    <div class="blog-hero w-full flex items-center justify-center animate__animated animate__fadeIn" id="blog-hero">
+        <div class="container mx-auto px-6 py-20 blog-hero-content">
+            <div class="animate__animated animate__fadeInDown animate__delay-1s">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" id="blog-title">Loading...</h1>
+            </div>
+            <div class="flex items-center text-sm md:text-base opacity-90 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="flex items-center">
+                    <i class="fas fa-calendar-alt text-white mr-2"></i>
+                    <span id="blog-date">Loading...</span>
+                </div>
+                <div class="mx-4 text-white">|</div>
+                <div class="flex items-center">
+                    <i class="fas fa-user text-white mr-2"></i>
+                    <span id="blog-author">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-wrap -mx-4">
+            <!-- Main Content -->
+            <div class="w-full lg:w-2/3 px-4">
+                <div class="content-card p-6 md:p-10 page-section card-hover-effect" id="content-section">
+                    <!-- Blog Metadata -->
+                    <div class="blog-meta mb-8 pb-6 border-b border-gray-200">
+                        <div>
+                            <i class="far fa-calendar-alt"></i>
+                            <span id="blog-date-content">Loading...</span>
+                        </div>
+                        <div>
+                            <i class="far fa-user"></i>
+                            <span id="blog-author-content">Loading...</span>
+                        </div>
+                        <div>
+                            <i class="far fa-eye"></i>
+                            <span id="blog-views" class="highlight-text">0 views</span>
+                        </div>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class="blog-content prose max-w-none" id="blog-content">
+                        <div class="animate-pulse">
+                            <div class="h-4 bg-orange-100 rounded w-3/4 mb-4"></div>
+                            <div class="h-4 bg-orange-100 rounded w-full mb-4"></div>
+                            <div class="h-4 bg-orange-100 rounded w-5/6 mb-4"></div>
+                            <div class="h-4 bg-orange-100 rounded w-full mb-4"></div>
+                            <div class="h-4 bg-orange-100 rounded w-3/4 mb-4"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="mt-10 pt-6 border-t border-gray-200 page-section" id="tags-section">
+                        <h4 class="text-xl font-semibold mb-4 text-gray-800">Topics</h4>
+                        <div class="flex flex-wrap gap-3" id="blog-tags">
+                            <span class="tag-item px-4 py-2 rounded-full text-sm font-medium">Education</span>
+                            <span class="tag-item px-4 py-2 rounded-full text-sm font-medium">Learning</span>
+                            <span class="tag-item px-4 py-2 rounded-full text-sm font-medium">Technology</span>
+                        </div>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="mt-10 pt-6 border-t border-gray-200 page-section" id="share-section">
+                        <h4 class="text-xl font-semibold mb-4 text-gray-800">Share This Article</h4>
+                        <div class="flex gap-3">
+                            <button class="share-btn p-3 bg-[#3b5998] text-white rounded-full animate-floating" onclick="shareBlog('facebook')">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-btn p-3 bg-[#1da1f2] text-white rounded-full animate-floating" style="animation-delay: 0.2s" onclick="shareBlog('twitter')">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="share-btn p-3 bg-[#25D366] text-white rounded-full animate-floating" style="animation-delay: 0.4s" onclick="shareBlog('whatsapp')">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="share-btn p-3 bg-[#0077b5] text-white rounded-full animate-floating" style="animation-delay: 0.6s" onclick="shareBlog('linkedin')">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="share-btn p-3 bg-gray-700 text-white rounded-full animate-floating" style="animation-delay: 0.8s" onclick="shareBlog('email')">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="mt-12 pt-6 border-t border-gray-200 page-section" id="comments-section">
+                        <h3 class="text-2xl font-bold mb-8 text-gray-800">Comments <span class="text-primary-color">(0)</span></h3>
+                        
+                        <!-- Comment Form -->
+                        <form id="comment-form" class="mb-10 comment-form p-6 rounded-xl shadow-sm">
+                            <h4 class="text-lg font-semibold mb-4 text-primary-dark">Leave your thoughts</h4>
+                            <div class="mb-4">
+                                <label for="comment-name" class="block text-gray-700 mb-2 font-medium">Name</label>
+                                <input type="text" id="comment-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none comment-form-input" placeholder="Your name" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="comment-email" class="block text-gray-700 mb-2 font-medium">Email</label>
+                                <input type="email" id="comment-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none comment-form-input" placeholder="Your email" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="comment-content" class="block text-gray-700 mb-2 font-medium">Comment</label>
+                                <textarea id="comment-content" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none comment-form-input" placeholder="Share your thoughts on this article..." required></textarea>
+                            </div>
+                            <button type="submit" class="px-6 py-3 primary-btn text-white rounded-lg font-medium inline-flex items-center">
+                                <i class="far fa-paper-plane mr-2"></i> Post Comment
+                            </button>
+                        </form>
+                        
+                        <!-- Comments List -->
+                        <div id="comments-list" class="space-y-6">
+                            <!-- Comments will be loaded here -->
+                            <div class="text-center py-10">
+                                <div class="inline-flex justify-center items-center w-16 h-16 bg-orange-100 rounded-full mb-4 animate-floating">
+                                    <i class="far fa-comments text-2xl text-primary-color"></i>
+                                </div>
+                                <p class="text-gray-500">No comments yet. Be the first to comment!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="w-full lg:w-1/3 px-4 mt-10 lg:mt-0">
+                <!-- Author Information -->
+                <div class="sidebar-card author-card p-6 mb-8 card-hover-effect">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">About the Author</h3>
+                    <div class="flex items-center mb-6">
+                        <img id="author-avatar" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiNlMGUwZTAiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjMwIiByPSIxMiIgZmlsbD0iIzk5OTk5OSIvPjxwYXRoIGQ9Ik02NSw2MiBDNjUsNDkgNTMsNTAgNDAsNTAgQzI3LDUwIDE1LDQ5IDE1LDYyIEMxNSw3MiA0MCw3NiA0MCw3NiBDNDAsNzYgNjUsNzIgNjUsNjIgWiIgZmlsbD0iIzk5OTk5OSIvPjwvc3ZnPg==" alt="Author" class="w-16 h-16 rounded-full mr-4 object-cover border-2 border-primary-color">
+                        <div>
+                            <h4 id="author-name" class="font-semibold text-lg text-gray-800">Author Name</h4>
+                            <p id="author-role" class="text-primary-color text-sm">Content Writer</p>
+                        </div>
+                    </div>
+                    <p id="author-bio" class="text-gray-700 leading-relaxed">
+                        Expert in educational content with over 5 years of experience in academic writing and research.
+                    </p>
+                    <div class="mt-4 flex gap-2">
+                        <a href="#" class="social-icon p-2 bg-gray-100 text-primary-color hover:bg-orange-50 rounded-full">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon p-2 bg-gray-100 text-primary-color hover:bg-orange-50 rounded-full">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon p-2 bg-gray-100 text-primary-color hover:bg-orange-50 rounded-full">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Related Blogs -->
+                <div class="sidebar-card related-blogs-card p-6 mb-8 card-hover-effect">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800 related-title">Related Articles</h3>
+                    <div id="related-blogs" class="space-y-4 mt-2">
+                        <!-- Related blogs will be loaded here -->
+                        <div class="animate-pulse">
+                            <div class="h-4 bg-orange-100 rounded w-3/4 mb-2"></div>
+                            <div class="h-3 bg-orange-100 rounded w-1/2 mb-4"></div>
+                            <div class="h-4 bg-orange-100 rounded w-full mb-2"></div>
+                            <div class="h-3 bg-orange-100 rounded w-2/3 mb-4"></div>
+                            <div class="h-4 bg-orange-100 rounded w-5/6 mb-2"></div>
+                            <div class="h-3 bg-orange-100 rounded w-1/2 mb-4"></div>
+                        </div>
+                    </div>
+                    <a href="blogs.html" class="mt-4 inline-block text-primary-color font-medium hover:text-primary-dark transition-colors">
+                        View All Articles <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Subscribe Box -->
+                <div class="sidebar-card newsletter-card p-6 text-white card-hover-effect">
+                    <h3 class="text-xl font-bold mb-4">Subscribe to Newsletter</h3>
+                    <p class="mb-4 opacity-90">Get the latest educational content delivered straight to your inbox</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800 shadow-inner">
+                        <button type="submit" class="w-full py-3 accent-btn rounded-lg font-medium shadow-lg">
+                            Subscribe Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/blog-detail.js"></script>
+</body>
+</html> 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Education Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="dashboard-card animate-fade">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+            <div class="card-body">
+                <div id="userInfo">
+                    <h3 class="mb-4">Welcome, <span id="userName"></span>!</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                            <p><strong>Joined:</strong> <span id="userJoinDate"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">Quick Actions</h5>
+                                    <div class="d-grid gap-2">
+                                        <a href="#" class="btn btn-outline-primary">Edit Profile</a>
+                                        <a href="#" class="btn btn-outline-secondary">Change Password</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { AuthManager, ApiService, RouteProtection } from '/scripts/script.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Protect route
+            RouteProtection.protectRoute();
+
+            try {
+                // Fetch user profile
+                const user = await ApiService.getProfile();
+
+                // Populate user info
+                document.getElementById('userName').textContent = user.name;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('userJoinDate').textContent = new Date(user.createdAt).toLocaleDateString();
+            } catch (error) {
+                console.error('Error fetching profile:', error);
+                // Logout on error
+                AuthManager.logout();
+            }
+
+            // Logout button handler
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                AuthManager.logout();
+            });
+        });
+    </script>
+</body>
+</html>

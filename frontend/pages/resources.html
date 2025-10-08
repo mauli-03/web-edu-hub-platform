@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub - Learning Resources</title>
+    
+    <!-- Auto Navbar Script - For faster loading -->
+    <script src="../js/auto-navbar.js"></script>
+    
+    <!-- CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/resources.css">
+    
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation - The navbar will be automatically loaded -->
+    
+    <!-- Hero Section -->
+    <div class="resources-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold">Learning Resources</h1>
+                    <p class="lead">Access high-quality educational materials to support your learning journey</p>
+                    <div class="input-group resource-search mb-4">
+                        <input type="text" class="form-control form-control-lg" placeholder="Search resources..." aria-label="Search resources">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="../images/resources-hero.svg" alt="Resources Hero" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Resource Categories Section -->
+    <section class="resource-categories py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title">Browse Resources by Category</h2>
+                    <p class="section-subtitle">Discover a wide range of learning materials organized by subject</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Computer Science</h4>
+                        <span class="resource-count">348 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4>Mathematics</h4>
+                        <span class="resource-count">275 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Sciences</h4>
+                        <span class="resource-count">412 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h4>Humanities</h4>
+                        <span class="resource-count">290 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Business</h4>
+                        <span class="resource-count">186 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Arts & Design</h4>
+                        <span class="resource-count">153 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h4>Languages</h4>
+                        <span class="resource-count">204 resources</span>
+                    </a>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Health Sciences</h4>
+                        <span class="resource-count">230 resources</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Resources Section -->
+    <section class="featured-resources py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Featured Resources</h2>
+                    <p class="section-subtitle">Hand-picked educational materials to enhance your learning</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <div class="resource-filters">
+                        <button class="btn btn-outline-primary active me-2">All</button>
+                        <button class="btn btn-outline-primary me-2">E-Books</button>
+                        <button class="btn btn-outline-primary me-2">Videos</button>
+                        <button class="btn btn-outline-primary">Documents</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Resource Item 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card">
+                        <div class="resource-badge">NEW</div>
+                        <div class="resource-type pdf">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Advanced Data Structures & Algorithms</h4>
+                            <p>A comprehensive guide covering advanced data structures and algorithms with practical examples.</p>
+                            <div class="resource-meta">
+                                <span><i class="fas fa-download"></i> 2.3k</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                                <span><i class="fas fa-clock"></i> 2 hours</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource Item 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card">
+                        <div class="resource-badge popular">POPULAR</div>
+                        <div class="resource-type video">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Machine Learning Fundamentals</h4>
+                            <p>Learn the core concepts of machine learning with hands-on tutorials and real-world examples.</p>
+                            <div class="resource-meta">
+                                <span><i class="fas fa-eye"></i> 15.7k</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-clock"></i> 4.5 hours</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource Item 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card">
+                        <div class="resource-type doc">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Financial Markets & Instruments</h4>
+                            <p>An essential guide to understanding financial markets, instruments and investment strategies.</p>
+                            <div class="resource-meta">
+                                <span><i class="fas fa-download"></i> 1.8k</span>
+                                <span><i class="fas fa-star"></i> 4.6</span>
+                                <span><i class="fas fa-clock"></i> 3 hours</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">View Document</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource Item 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card">
+                        <div class="resource-type video">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Web Development Masterclass</h4>
+                            <p>A complete guide to modern web development covering HTML, CSS, JavaScript, and popular frameworks.</p>
+                            <div class="resource-meta">
+                                <span><i class="fas fa-eye"></i> 12.4k</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
+                                <span><i class="fas fa-clock"></i> 8 hours</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource Item 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card">
+                        <div class="resource-badge">NEW</div>
+                        <div class="resource-type pdf">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Artificial Intelligence Ethics</h4>
+                            <p>Explore the ethical considerations and implications of artificial intelligence in modern society.</p>
+                            <div class="resource-meta">
+                                <span><i class="fas fa-download"></i> 950</span>
+                                <span><i class="fas fa-star"></i> 4.5</span>
+                                <span><i class="fas fa-clock"></i> 1.5 hours</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource Item 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card">
+                        <div class="resource-type doc">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Research Methodology Guide</h4>
+                            <p>A comprehensive guide to research methodologies, data collection, and analysis techniques.</p>
+                            <div class="resource-meta">
+                                <span><i class="fas fa-download"></i> 2.1k</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                                <span><i class="fas fa-clock"></i> 2.5 hours</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">View Document</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg">Browse All Resources</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Learning Tools Section -->
+    <section class="interactive-tools py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Interactive Learning Tools</h2>
+                    <p class="section-subtitle">Enhance your understanding with these interactive educational tools</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Tool 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Concept Maps</h4>
+                        <p>Create visual representations of knowledge and concepts to enhance understanding.</p>
+                        <a href="#" class="btn btn-outline-primary">Launch Tool</a>
+                    </div>
+                </div>
+                
+                <!-- Tool 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Data Visualization</h4>
+                        <p>Transform complex data into meaningful visual insights with interactive charts.</p>
+                        <a href="#" class="btn btn-outline-primary">Launch Tool</a>
+                    </div>
+                </div>
+                
+                <!-- Tool 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Code Playground</h4>
+                        <p>Write, test, and debug code in various programming languages instantly.</p>
+                        <a href="#" class="btn btn-outline-primary">Launch Tool</a>
+                    </div>
+                </div>
+                
+                <!-- Tool 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h4>Quiz Generator</h4>
+                        <p>Create customized quizzes to test knowledge and reinforce learning.</p>
+                        <a href="#" class="btn btn-outline-primary">Launch Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resource Collections Section -->
+    <section class="resource-collections py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Curated Collections</h2>
+                    <p class="section-subtitle">Carefully organized resource collections for specific learning goals</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Collection 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="collection-card">
+                        <div class="collection-image">
+                            <img src="../images/collection-programming.jpg" alt="Programming Fundamentals" class="img-fluid">
+                            <div class="collection-overlay">
+                                <span class="resource-count">12 resources</span>
+                            </div>
+                        </div>
+                        <div class="collection-content">
+                            <h4>Programming Fundamentals</h4>
+                            <p>Master the basics of programming with this curated collection of tutorials, guides, and practice exercises.</p>
+                            <a href="#" class="collection-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collection 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="collection-card">
+                        <div class="collection-image">
+                            <img src="../images/collection-data-science.jpg" alt="Data Science Essentials" class="img-fluid">
+                            <div class="collection-overlay">
+                                <span class="resource-count">15 resources</span>
+                            </div>
+                        </div>
+                        <div class="collection-content">
+                            <h4>Data Science Essentials</h4>
+                            <p>Learn the core concepts and tools of data science with comprehensive guides and practical examples.</p>
+                            <a href="#" class="collection-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collection 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="collection-card">
+                        <div class="collection-image">
+                            <img src="../images/collection-design.jpg" alt="UX/UI Design" class="img-fluid">
+                            <div class="collection-overlay">
+                                <span class="resource-count">10 resources</span>
+                            </div>
+                        </div>
+                        <div class="collection-content">
+                            <h4>UX/UI Design</h4>
+                            <p>Discover principles and techniques for creating user-friendly, aesthetically pleasing digital interfaces.</p>
+                            <a href="#" class="collection-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contribute Resources Section -->
+    <section class="contribute-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Share Your Knowledge</h2>
+                    <p class="lead mb-4">Have educational resources you'd like to share with the community? Contribute your materials and help fellow learners.</p>
+                    <ul class="contribute-benefits">
+                        <li><i class="fas fa-check-circle text-success"></i> Get recognition for your expertise</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Help students around the world</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Join a community of educators</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Earn badges and rewards</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-lg mt-3">Contribute Resources</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="../images/contribute-resources.svg" alt="Contribute Resources" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Subscription Section -->
+    <section class="subscription-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Stay Updated with New Resources</h2>
+                    <p class="lead mb-4">Subscribe to our newsletter and be the first to know about new educational resources and tools.</p>
+                    <form class="subscription-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control form-control-lg" placeholder="Your email address" aria-label="Email address">
+                            <button class="btn btn-light btn-lg" type="submit">Subscribe</button>
+                        </div>
+                        <div class="form-text text-white-50">We respect your privacy. Unsubscribe at any time.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Add the footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/resources.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

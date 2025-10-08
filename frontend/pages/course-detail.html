@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail | EduHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navbar-dark.css">
+    <style>
+        :root {
+            --primary-color: #FF6B35; /* Orange */
+            --secondary-color: #1D7DD3; /* Blue */
+            --dark-color: #121212; /* Black */
+            --dark-secondary: #222222;
+            --light-color: #f8f9fa;
+            --text-color: #e0e0e0;
+            --border-radius: 8px;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            padding-top: 70px;
+        }
+        
+        .header-container {
+            position: relative;
+            background: linear-gradient(135deg, rgba(29, 125, 211, 0.8), rgba(255, 107, 53, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-color);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .course-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .course-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .course-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .course-badge.blue {
+            background-color: var(--secondary-color);
+        }
+        
+        .course-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            background-color: var(--dark-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .feature-icon {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .content-section {
+            background-color: var(--dark-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            background-color: rgba(255, 107, 53, 0.1);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background-color: rgba(255, 107, 53, 0.2);
+        }
+        
+        .success-path {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            border-left: 3px dashed var(--primary-color);
+            margin-left: 1rem;
+        }
+        
+        .path-step {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .path-step::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid var(--dark-color);
+        }
+        
+        .path-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .materials-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .material-item {
+            background-color: var(--dark-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .material-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .material-icon {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        .material-info {
+            flex: 1;
+        }
+        
+        .material-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .material-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .enrollment-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+        
+        .enrollment-info {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 2rem;
+        }
+        
+        .enrollment-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .enrollment-desc {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            margin-right: 0.5rem;
+        }
+        
+        .discount {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .cta-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .cta-icon {
+            margin-right: 0.5rem;
+        }
+        
+        .instructor-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .instructor-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .instructor-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .instructor-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .instructor-title {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .social-link {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .course-title {
+                font-size: 2rem;
+            }
+            
+            .course-stats {
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                min-width: 100px;
+                padding: 1rem;
+            }
+            
+            .enrollment-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .enrollment-info {
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+            
+            .instructor-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Toast notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            max-width: 350px;
+        }
+
+        .toast-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .toast-content i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Enrolled button state */
+        .cta-button.enrolled {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Additional animations */
+        .animate-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .animate-hover:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Loading Overlay Styles */
+        #loadingOverlay .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(255, 107, 53, 0.2);
+            border-radius: 50%;
+            border-top: 6px solid var(--primary-color);
+            border-bottom: 6px solid var(--secondary-color);
+            animation: spin 1.5s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 18, 18, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loading-content {
+            text-align: center;
+        }
+        
+        .loading-content p {
+            margin-top: 20px;
+            color: var(--text-color);
+            font-size: 1.2rem;
+        }
+        
+        /* Toast Notification Styles */
+        .toast-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            max-width: 350px;
+            background-color: rgba(29, 125, 211, 0.95);
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9000;
+            transition: all 0.3s ease;
+        }
+        
+        .toast-notification.success {
+            background-color: rgba(40, 167, 69, 0.95);
+        }
+        
+        .toast-notification.error {
+            background-color: rgba(220, 53, 69, 0.95);
+        }
+        
+        .toast-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .toast-content i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .toast-content p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay animate__animated animate__fadeIn">
+        <div class="loading-content animate__animated animate__pulse animate__infinite">
+            <div class="loading-spinner"></div>
+            <p>Loading course details...</p>
+        </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-5">
+        <!-- Course Header -->
+        <div class="header-container animate__animated animate__fadeIn">
+            <div class="header-content container">
+                <span class="course-badge">FEATURED</span>
+                <span class="course-badge blue">BEST SELLER</span>
+                <h1 class="course-title" id="courseTitle">Advanced Web Development Masterclass</h1>
+                <p class="course-description" id="courseDescription">Master modern web development with this comprehensive course covering front-end and back-end technologies, responsive design, performance optimization, and deployment strategies.</p>
+            </div>
+        </div>
+        
+        <!-- Course Statistics -->
+        <div class="course-stats animate__animated animate__fadeInUp">
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-value">12,450+</div>
+                <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-book"></i></div>
+                <div class="stat-value">42</div>
+                <div class="stat-label">Lessons</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-value">35h</div>
+                <div class="stat-label">Duration</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-value">4.8</div>
+                <div class="stat-label">Rating</div>
+            </div>
+        </div>
+        
+        <!-- Course Features -->
+        <div class="content-section animate__animated animate__fadeInUp">
+            <h3 class="section-title">Course Features</h3>
+            <ul class="feature-list" id="courseFeatures">
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Responsive Design Techniques
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Modern JavaScript Frameworks
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    RESTful API Development
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Database Integration
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Authentication & Security
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Performance Optimization
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Deployment Strategies
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    Testing & Debugging
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Course Success Path -->
+        <div class="content-section animate__animated animate__fadeInUp">
+            <h3 class="section-title">Course Success Path</h3>
+            <div class="success-path" id="courseSuccessPath">
+                <div class="path-step">
+                    <h4 class="step-title">Step 1: Fundamentals</h4>
+                    <p>Master HTML5, CSS3, and modern JavaScript ES6+ syntax. Build a solid foundation with responsive design principles and CSS frameworks.</p>
+                </div>
+                <div class="path-step">
+                    <h4 class="step-title">Step 2: Frontend Development</h4>
+                    <p>Learn popular frameworks like React, state management, component architecture, and UI/UX best practices.</p>
+                </div>
+                <div class="path-step">
+                    <h4 class="step-title">Step 3: Backend Development</h4>
+                    <p>Build robust server-side applications with Node.js, Express, and database integration with MongoDB or SQL.</p>
+                </div>
+                <div class="path-step">
+                    <h4 class="step-title">Step 4: Full Stack Integration</h4>
+                    <p>Connect frontend and backend, implement authentication, API security, and develop a complete web application.</p>
+                </div>
+                <div class="path-step">
+                    <h4 class="step-title">Step 5: Deployment & Optimization</h4>
+                    <p>Learn CI/CD pipelines, cloud deployment, performance optimization, and monitoring techniques for production.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Course Materials -->
+        <div class="content-section animate__animated animate__fadeInUp">
+            <h3 class="section-title">Course Materials</h3>
+            <ul class="materials-list" id="courseMaterials">
+                <li class="material-item">
+                    <div class="material-icon"><i class="fas fa-video"></i></div>
+                    <div class="material-info">
+                        <div class="material-title">HD Video Lessons</div>
+                        <div class="material-desc">42 high-quality video lessons with practical code examples and demonstrations</div>
+                    </div>
+                </li>
+                <li class="material-item">
+                    <div class="material-icon"><i class="fas fa-file-code"></i></div>
+                    <div class="material-info">
+                        <div class="material-title">Source Code</div>
+                        <div class="material-desc">Complete source code for all projects and exercises</div>
+                    </div>
+                </li>
+                <li class="material-item">
+                    <div class="material-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="material-info">
+                        <div class="material-title">Practical Assignments</div>
+                        <div class="material-desc">15 hands-on assignments with detailed solutions</div>
+                    </div>
+                </li>
+                <li class="material-item">
+                    <div class="material-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="material-info">
+                        <div class="material-title">Capstone Projects</div>
+                        <div class="material-desc">3 real-world projects to build your portfolio</div>
+                    </div>
+                </li>
+                <li class="material-item">
+                    <div class="material-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="material-info">
+                        <div class="material-title">Completion Certificate</div>
+                        <div class="material-desc">Receive a certificate upon successful course completion</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Enrollment Section -->
+        <div class="enrollment-section animate__animated animate__fadeInUp">
+            <div class="enrollment-info">
+                <h3 class="enrollment-title">Ready to Start Your Journey?</h3>
+                <p class="enrollment-desc">Join thousands of successful developers who have mastered web development with this course.</p>
+                <div class="price-tag">
+                    <span class="old-price">$129.99</span>
+                    $79.99
+                    <span class="discount">40% OFF</span>
+                </div>
+            </div>
+            <button class="cta-button" id="startCourseButton">
+                <i class="fas fa-rocket cta-icon"></i>
+                Enroll Now
+            </button>
+        </div>
+        
+        <!-- Instructor Section -->
+        <div class="instructor-section animate__animated animate__fadeInUp">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIgZmlsbD0iI2UwZTBlMCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIzMCIgZmlsbD0iIzk5OTk5OSIvPjxwYXRoIGQ9Ik0xNjAsMTYwIEMxNjAsMTIwIDEzMCwxMzAgMTAwLDEzMCBDNzAsMTMwIDQwLDEyMCA0MCwxNjAgQzQwLDE4MCAxMDAsMTkwIDEwMCwxOTAgQzEwMCwxOTAgMTYwLDE4MCAxNjAsMTYwIFoiIGZpbGw9IiM5OTk5OTkiLz48L3N2Zz4=" alt="Instructor" class="instructor-avatar">
+            <div class="instructor-info">
+                <h4 class="instructor-name">Alex Johnson</h4>
+                <p class="instructor-title">Senior Web Developer & Instructor</p>
+                <p>Alex is a seasoned web developer with over 10 years of experience building large-scale applications. He has worked with companies like Google, Amazon, and several startups, helping them create robust web solutions.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/course-detail.js"></script>
+</body>
+</html>

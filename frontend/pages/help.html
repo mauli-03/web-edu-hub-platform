@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub - Help & Support</title>
+    
+    <!-- Auto Navbar Script - For faster loading -->
+    <script src="../js/auto-navbar.js"></script>
+    
+    <!-- CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/help.css">
+    
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation - The navbar will be automatically loaded -->
+    
+    <!-- Help Center Hero Section -->
+    <div class="bg-primary text-white py-5 mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">How can we help you?</h1>
+                    <p class="lead">Find answers, resources, and support for all your Education Hub needs</p>
+                    <div class="mt-4">
+                        <div class="search-bar">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" placeholder="Search for help topics..." aria-label="Search">
+                                <button class="btn btn-light" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <img src="../images/help-hero.svg" alt="Help Center" class="img-fluid" width="300">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Quick Help Links -->
+        <div class="row mb-5">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#faq-section" class="text-decoration-none">
+                    <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="icon-circle bg-primary-light mb-3">
+                                <i class="bi bi-question-lg text-primary fs-4"></i>
+                            </div>
+                            <h5>FAQs</h5>
+                            <p class="text-muted small">Common questions answered</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#guides-section" class="text-decoration-none">
+                    <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="icon-circle bg-success-light mb-3">
+                                <i class="bi bi-book text-success fs-4"></i>
+                            </div>
+                            <h5>User Guides</h5>
+                            <p class="text-muted small">Step-by-step tutorials</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#contact-section" class="text-decoration-none">
+                    <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="icon-circle bg-warning-light mb-3">
+                                <i class="bi bi-envelope text-warning fs-4"></i>
+                            </div>
+                            <h5>Contact Us</h5>
+                            <p class="text-muted small">Get personalized help</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#trouble-section" class="text-decoration-none">
+                    <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body">
+                            <div class="icon-circle bg-danger-light mb-3">
+                                <i class="bi bi-tools text-danger fs-4"></i>
+                            </div>
+                            <h5>Troubleshooting</h5>
+                            <p class="text-muted small">Fix common issues</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <section id="faq-section" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon bg-primary text-white rounded-circle p-3 me-3">
+                    <i class="bi bi-question-circle"></i>
+                </div>
+                <h2 class="mb-0">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How do I create an account on Education Hub?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            To create an account, click on the "Sign Up" button on the homepage. Fill in your personal details, choose a strong password, and verify your email address. Once verified, you can log in and start exploring our educational resources.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How do I enroll in a course?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Browse our course catalog and select the course you're interested in. On the course page, click the "Enroll" button. You'll be guided through the enrollment process which may include payment information if it's a paid course.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Can I get a refund for a course I purchased?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer a 30-day money-back guarantee for most courses. If you're not satisfied with your purchase, you can request a refund by contacting our support team within 30 days of enrollment.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            How do I track my learning progress?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Your learning progress is automatically tracked in your user dashboard. Visit your profile page to see completion percentages, quiz scores, and certificates earned for each course you're enrolled in.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How do I download my course certificates?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Once you've successfully completed a course, your certificate will be available in your profile under the "Certificates" section. Click on the certificate to view it, then use the download button to save it as a PDF.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+            </div>
+        </section>
+        
+        <!-- User Guides Section -->
+        <section id="guides-section" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon bg-success text-white rounded-circle p-3 me-3">
+                    <i class="bi bi-book"></i>
+                </div>
+                <h2 class="mb-0">User Guides</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="../images/guide-getting-started.jpg" class="card-img-top" alt="Getting Started Guide">
+                        <div class="card-body">
+                            <h5 class="card-title">Getting Started</h5>
+                            <p class="card-text">A complete walkthrough for new users to set up their profile and navigate the platform.</p>
+                            <a href="#" class="btn btn-sm btn-outline-success">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="../images/guide-course-tools.jpg" class="card-img-top" alt="Course Tools Guide">
+                        <div class="card-body">
+                            <h5 class="card-title">Using Course Tools</h5>
+                            <p class="card-text">Learn how to use discussion forums, submit assignments, and track your progress.</p>
+                            <a href="#" class="btn btn-sm btn-outline-success">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="../images/guide-mobile-app.jpg" class="card-img-top" alt="Mobile App Guide">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile App Guide</h5>
+                            <p class="card-text">Instructions for downloading and using our mobile app for learning on the go.</p>
+                            <a href="#" class="btn btn-sm btn-outline-success">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Troubleshooting Section -->
+        <section id="trouble-section" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon bg-danger text-white rounded-circle p-3 me-3">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <h2 class="mb-0">Troubleshooting</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5><i class="bi bi-wifi text-danger me-2"></i>Connection Issues</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">
+                                    <a href="#" class="text-decoration-none">Video won't load or keeps buffering</a>
+                                </li>
+                                <li class="list-group-item border-0 ps-0">
+                                    <a href="#" class="text-decoration-none">Can't connect to live sessions</a>
+                                </li>
+                                <li class="list-group-item border-0 ps-0">
+                                    <a href="#" class="text-decoration-none">Content doesn't display properly</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h5><i class="bi bi-key text-danger me-2"></i>Account Access</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">
+                                    <a href="#" class="text-decoration-none">Reset forgotten password</a>
+                                </li>
+                                <li class="list-group-item border-0 ps-0">
+                                    <a href="#" class="text-decoration-none">Account locked after multiple login attempts</a>
+                                </li>
+                                <li class="list-group-item border-0 ps-0">
+                                    <a href="#" class="text-decoration-none">Email verification issues</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact-section" class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon bg-warning text-white rounded-circle p-3 me-3">
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <h2 class="mb-0">Contact Support</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0">Send Us a Message</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="" selected disabled>Select a topic</option>
+                                        <option value="account">Account Issues</option>
+                                        <option value="billing">Billing & Payments</option>
+                                        <option value="course">Course Content</option>
+                                        <option value="technical">Technical Problems</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0">Contact Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-info">
+                                <div class="d-flex mb-4">
+                                    <div class="contact-icon bg-primary-light text-primary rounded-circle p-3 me-3">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Email Support</h6>
+                                        <p class="mb-0">support@educationhub.com</p>
+                                        <p class="text-muted small">We typically respond within 24 hours</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-4">
+                                    <div class="contact-icon bg-primary-light text-primary rounded-circle p-3 me-3">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Phone Support</h6>
+                                        <p class="mb-0">+91 9322852969</p>
+                                        <p class="text-muted small">Monday-Friday: 9AM-5PM EST</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-4">
+                                    <div class="contact-icon bg-primary-light text-primary rounded-circle p-3 me-3">
+                                        <i class="bi bi-chat-dots-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Live Chat</h6>
+                                        <p class="mb-0">Available on weekdays</p>
+                                        <p class="text-muted small">Click the chat icon in the bottom right corner</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="contact-icon bg-primary-light text-primary rounded-circle p-3 me-3">
+                                        <i class="bi bi-headset"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Schedule a Call</h6>
+                                        <p class="mb-0">Book a slot with our support team</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary mt-2">Schedule Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Help Resources Section -->
+        <section class="mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="feature-icon bg-info text-white rounded-circle p-3 me-3">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+                <h2 class="mb-0">Help Resources</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body">
+                                <i class="bi bi-play-circle text-danger fs-1 mb-3"></i>
+                                <h5>Video Tutorials</h5>
+                                <p class="text-muted mb-0">Visual guides to help you navigate</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body">
+                                <i class="bi bi-file-pdf text-danger fs-1 mb-3"></i>
+                                <h5>Documentation</h5>
+                                <p class="text-muted mb-0">Detailed platform documentation</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body">
+                                <i class="bi bi-people-fill text-primary fs-1 mb-3"></i>
+                                <h5>Community Forum</h5>
+                                <p class="text-muted mb-0">Ask questions and get answers</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center h-100 border-0 shadow-sm hover-card">
+                            <div class="card-body">
+                                <i class="bi bi-globe text-success fs-1 mb-3"></i>
+                                <h5>Webinars</h5>
+                                <p class="text-muted mb-0">Live help sessions and workshops</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Feedback Section with Floating CTA -->
+    <div class="feedback-cta">
+        <div class="container-fluid">
+            <div class="row bg-light py-4">
+                <div class="col-md-8 mx-auto text-center">
+                    <h4>Was this help center useful?</h4>
+                    <div class="mt-3">
+                        <button class="btn btn-outline-success me-2">
+                            <i class="bi bi-hand-thumbs-up"></i> Yes, it was helpful
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i class="bi bi-hand-thumbs-down"></i> No, I still need help
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- Chat widget button -->
+    <div class="chat-widget">
+        <button class="btn btn-primary rounded-circle p-3 shadow">
+            <i class="bi bi-chat-dots-fill fs-5"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/help.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

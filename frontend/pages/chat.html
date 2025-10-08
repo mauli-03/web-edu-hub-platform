@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ChatZone</title>
+        <!-- Socket.io client library -->
+        <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <script src="../js/auto-navbar.js"></script>
+</head>
+
+<body>
+    <!-- Full-width navbar -->
+    <div id="navbar-container"></div>
+    
+    <!-- Chat content wrapper -->
+    <div class="chat-content-wrapper">
+        <div class="container">
+            <div class="chat-header-top">
+                <h1>ChatZone</h1>
+                <div class="user-controls">
+                    <span id="welcome-message">Welcome, <span id="user-display-name">User</span>!</span>
+                    <a href="home.html" class="nav-button">Home</a>
+                </div>
+            </div>
+            <h2>Welcome to <span>ChatZone</span></h2>
+            
+            <!-- Chat Type Tabs -->
+            <div class="chat-tabs">
+                <div class="tab active" id="normal-chat-tab">Normal Chat</div>
+                <div class="tab" id="room-chat-tab">Room Chat</div>
+            </div>
+
+            <div class="chat-container">
+                <!-- Room List - Only visible in Room Chat mode -->
+                <div class="room-list" id="room-list" style="display: none;">
+                    <div class="room-item active" data-room-id="general">General Chat</div>
+                    <!-- Room items will be added here dynamically -->
+                    <button class="create-room-btn" id="create-room-btn">Create Room</button>
+                </div>
+                
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <div id="current-room">General Chat</div>
+                        <div class="room-members" id="room-members"></div>
+                    </div>
+                    
+                    <!-- Online Users List -->
+                    <div class="online-users-container">
+                        <div class="online-users-header">Online Users</div>
+                        <div class="online-users-list" id="online-users-list">
+                            <!-- Online users will be added here dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div class="msg" id="message-container">
+                        <!-- Messages will be added dynamically by JavaScript -->
+                    </div>
+                    
+                    <div class="typing-indicator" id="typing-indicator" style="display: none;"></div>
+                    
+                    <div class="input_msg">
+                        <input type="text" id="message-input" placeholder="Write your message here">
+                        <div class="file-input-container">
+                            <input type="file" id="file-input" style="display: none;">
+                            <button class="file-button" id="file-button" title="Share a file">
+                                <span>📎</span>
+                            </button>
+                        </div>
+                        <button class="emoji-button" id="emoji-button" title="Send an emoji">
+                            <span>😊</span>
+                        </button>
+                        <button class="sticker-button" id="sticker-button" title="Send a sticker">
+                            <span>🌟</span>
+                        </button>
+                        <button id="send-button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="status">
+        <p id="connection-status">Server connection: Disconnected</p>
+        <p id="online-users">Online users: 0</p>
+        <div id="debug-info" style="margin-top: 10px; font-size: 12px; color: #666;">
+            <p>Your username: <span id="current-username">Not set</span></p>
+            <p>Socket ID: <span id="socket-id">Not connected</span></p>
+            <p>Last event: <span id="last-event">None</span></p>
+        </div>
+    </div>
+    
+    <!-- Emoji Picker -->
+    <div class="emoji-picker" id="emoji-picker">
+        <div class="emoji-grid">
+            <!-- Emojis will be added dynamically -->
+        </div>
+    </div>
+    
+    <!-- Sticker Picker -->
+    <div class="sticker-picker" id="sticker-picker">
+        <div class="sticker-grid">
+            <!-- Stickers will be added dynamically -->
+        </div>
+    </div>
+    
+    <!-- Create Room Modal -->
+    <div class="modal" id="create-room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Chat Room</h3>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="create-room-form">
+                    <div class="form-group">
+                        <label for="room-name">Room Name</label>
+                        <input type="text" id="room-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-description">Description</label>
+                        <textarea id="room-description"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="room-private">
+                        <label for="room-private">Private Room</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancel-room">Cancel</button>
+                <button type="button" class="btn-primary" id="save-room">Create Room</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Education Hub is a platform dedicated to connecting learners with quality educational resources and fostering a community of knowledge sharing.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="courses.html"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="forums.html"><i class="fas fa-comments"></i> Forums</a></li>
+                    <li><a href="blogs.html"><i class="fas fa-blog"></i> Blogs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Pune, India</li>
+                    <li><i class="fas fa-phone"></i> +91 8010095340</li>
+                    <li><i class="fas fa-envelope"></i> info@educationhub.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subscribe</h4>
+                <p>Stay updated with our latest news and offers.</p>
+                <form class="footer-subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Help Center</a>
+            </div>
+            <p>&copy; 2025 Education Hub. All rights reserved.</p>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+    
+    <!-- Add the footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- JavaScript for footer functionality -->
+    <script src="../js/footer.js"></script>
+
+    <script type="module" src="../js/chat.js"></script>
+</body>
+
+</html>

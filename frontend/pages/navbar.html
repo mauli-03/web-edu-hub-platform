@@ -1,0 +1,53 @@
+<head>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<nav class="main-navigation">
+    <div class="nav-container">
+        <a class="navbar-brand" href="home.html">
+            <img src="../assets/images/logo.png" alt="Education Hub Logo" width="50" height="50" class="me-2">
+            <span class="brand-text">EduHub</span>
+        </a>
+        
+        <ul class="nav-links" id="nav-menu">
+            <li data-category="home"><a href="home.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li data-category="education"><a href="university.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Universities</a></li>
+            <li data-category="education"><a href="courses.html" class="nav-link"><i class="fas fa-book"></i> Courses</a></li>
+            <li data-category="community"><a href="blogs.html" class="nav-link"><i class="fas fa-rss"></i> Blogs</a></li>
+            <li data-category="community"><a href="forums.html" class="nav-link"><i class="fas fa-comments"></i> Forums</a></li>
+            <li data-category="community"><a href="chat.html" class="nav-link"><i class="fas fa-comment"></i> Chat</a></li>
+            <li data-category="tools"><a href="help.html" class="nav-link"><i class="fas fa-question-circle"></i> Help</a></li>
+        </ul>
+        
+        <div class="auth-buttons" id="auth-buttons-container">
+            <div id="logged-out-buttons">
+                <a href="login.html" class="btn btn-login">Login</a>
+                <a href="register.html" class="btn btn-register">Sign Up</a>
+            </div>
+            <div id="logged-in-buttons" style="display: none;">
+                <div class="user-menu dropdown">
+                    <div class="user-info dropdown-toggle">
+                        <span id="user-greeting">Hi, User</span>
+                        <div class="user-avatar">
+                            <img id="user-avatar" src="../assets/images/avatars/default-avatar.svg" alt="User Avatar">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <ul class="dropdown-menu user-dropdown">
+                        <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav-menu">
+    <!-- Mobile menu items will be dynamically generated -->
+</div>

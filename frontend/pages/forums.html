@@ -1,0 +1,300 @@
+<!-- forums.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forums | Education Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/forums.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    <script type="module" src="../js/add-navbar.js"></script>
+    
+    <!-- Header with gradient background -->
+    <header style="background-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)), url('../assets/images/pattern-bg.png'); background-blend-mode: overlay; background-size: cover;">
+        <div class="header-content">
+            <h1>Discussion Forums</h1>
+            <p>Connect with fellow learners, share ideas, and solve problems together.</p>
+            <a href="create-forum.html" class="create-discussion-btn">
+                <i class="fas fa-plus-circle"></i> Create New Discussion
+            </a>
+        </div>
+        <div class="header-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,122.7C672,96,768,64,864,74.7C960,85,1056,139,1152,160C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Search and filter section -->
+        <section class="search-filter">
+            <input type="text" placeholder="Search discussions..." id="forum-search-box">
+            <select id="forum-category">
+                <option value="all">All Topics</option>
+                <option value="technology">Technology</option>
+                <option value="education">Education</option>
+                <option value="career">Career</option>
+                <option value="science">Science</option>
+                <option value="humanities">Humanities</option>
+            </select>
+            <select id="forum-sort">
+                <option value="recent">Most Recent</option>
+                <option value="popular">Most Popular</option>
+                <option value="active">Most Active</option>
+            </select>
+            <button onclick="filterForums()"><i class="fas fa-search"></i> Search</button>
+        </section>
+        
+        <!-- Quick category filters -->
+        <div class="quick-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="technology">Technology</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+            <button class="filter-btn" data-filter="career">Career</button>
+            <button class="filter-btn" data-filter="trending">Trending</button>
+        </div>
+        
+        <!-- Forum threads list -->
+        <section class="forum-list">
+            <!-- Thread 1 -->
+            <div class="forum-thread" data-category="technology">
+                <div class="thread-content">
+                    <div class="thread-main">
+                        <span class="category-pill category-technology">Technology</span>
+                        <h3><a href="forum-detail.html?id=1">Best Programming Languages for 2025</a></h3>
+                        <p>Discuss the most in-demand programming languages for the future, considering trends in AI, cloud computing, and new emerging technologies.</p>
+                        
+                        <div class="thread-meta">
+                            <div class="thread-author">
+                                <img src="../assets/images/avatars/user1.jpg" alt="User avatar" class="author-avatar">
+                                <span>Alex Johnson</span>
+                            </div>
+                            <div class="thread-date">
+                                <i class="far fa-clock"></i>
+                                <span>2 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="thread-stats">
+                            <div class="views"><i class="far fa-eye"></i> 245 views</div>
+                            <div class="replies"><i class="far fa-comment"></i> 15 replies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="thread-actions">
+                    <button class="like-btn"><i class="far fa-thumbs-up"></i> Like (48)</button>
+                    <button class="comment-btn" onclick="window.location.href='forum-detail.html?id=1'"><i class="far fa-comment"></i> Comment</button>
+                    <button class="share-btn"><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+            
+            <!-- Thread 2 -->
+            <div class="forum-thread" data-category="education">
+                <div class="thread-content">
+                    <div class="thread-main">
+                        <span class="category-pill category-education">Education</span>
+                        <h3><a href="forum-detail.html?id=2">How to Prepare for University Exams?</a></h3>
+                        <p>Share study techniques and strategies to ace exams. Looking for effective methods to improve retention and understanding complex topics.</p>
+                        
+                        <div class="thread-meta">
+                            <div class="thread-author">
+                                <img src="../assets/images/avatars/user2.jpg" alt="User avatar" class="author-avatar">
+                                <span>Sophia Chen</span>
+                            </div>
+                            <div class="thread-date">
+                                <i class="far fa-clock"></i>
+                                <span>Yesterday</span>
+                            </div>
+                        </div>
+                        
+                        <div class="thread-stats">
+                            <div class="views"><i class="far fa-eye"></i> 312 views</div>
+                            <div class="replies"><i class="far fa-comment"></i> 22 replies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="thread-actions">
+                    <button class="like-btn"><i class="far fa-thumbs-up"></i> Like (67)</button>
+                    <button class="comment-btn" onclick="window.location.href='forum-detail.html?id=2'"><i class="far fa-comment"></i> Comment</button>
+                    <button class="share-btn"><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+            
+            <!-- Thread 3 -->
+            <div class="forum-thread" data-category="career">
+                <div class="thread-content">
+                    <div class="thread-main">
+                        <span class="category-pill category-career">Career</span>
+                        <h3><a href="forum-detail.html?id=3">Career Advice: Tech vs Business</a></h3>
+                        <p>Which career path is more promising? Share your thoughts and personal experiences on making this important decision. Looking at long-term growth and satisfaction.</p>
+                        
+                        <div class="thread-meta">
+                            <div class="thread-author">
+                                <img src="../assets/images/avatars/user3.jpg" alt="User avatar" class="author-avatar">
+                                <span>Marcus Williams</span>
+                            </div>
+                            <div class="thread-date">
+                                <i class="far fa-clock"></i>
+                                <span>2 days ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="thread-stats">
+                            <div class="views"><i class="far fa-eye"></i> 178 views</div>
+                            <div class="replies"><i class="far fa-comment"></i> 9 replies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="thread-actions">
+                    <button class="like-btn"><i class="far fa-thumbs-up"></i> Like (32)</button>
+                    <button class="comment-btn" onclick="window.location.href='forum-detail.html?id=3'"><i class="far fa-comment"></i> Comment</button>
+                    <button class="share-btn"><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+            
+            <!-- Thread 4 -->
+            <div class="forum-thread" data-category="technology">
+                <div class="thread-content">
+                    <div class="thread-main">
+                        <span class="category-pill category-technology">Technology</span>
+                        <h3><a href="forum-detail.html?id=4">AI Tools for Students: Pros and Cons</a></h3>
+                        <p>Discussing the ethical implications and practical benefits of using AI tools like ChatGPT for academic work. How should students responsibly use these tools?</p>
+                        
+                        <div class="thread-meta">
+                            <div class="thread-author">
+                                <img src="../assets/images/avatars/user4.jpg" alt="User avatar" class="author-avatar">
+                                <span>Jamie Rivera</span>
+                            </div>
+                            <div class="thread-date">
+                                <i class="far fa-clock"></i>
+                                <span>1 week ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="thread-stats">
+                            <div class="views"><i class="far fa-eye"></i> 523 views</div>
+                            <div class="replies"><i class="far fa-comment"></i> 38 replies</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="thread-actions">
+                    <button class="like-btn"><i class="far fa-thumbs-up"></i> Like (94)</button>
+                    <button class="comment-btn" onclick="window.location.href='forum-detail.html?id=4'"><i class="far fa-comment"></i> Comment</button>
+                    <button class="share-btn"><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="pagination-item active">1</div>
+            <div class="pagination-item">2</div>
+            <div class="pagination-item">3</div>
+            <div class="pagination-item">4</div>
+            <div class="pagination-item">5</div>
+            <div class="pagination-item"><i class="fas fa-ellipsis-h"></i></div>
+            <div class="pagination-item"><i class="fas fa-angle-right"></i></div>
+        </div>
+        
+        <!-- Create new post section -->
+        <section class="new-post">
+            <h2>Start a New Discussion</h2>
+            <p class="action-text">Want to create a more detailed post with rich formatting and attachments?</p>
+            <a href="create-forum.html" class="btn-advanced-editor">Use Advanced Editor</a>
+            <div class="quick-post-divider"><span>or use quick post</span></div>
+            
+            <input type="text" placeholder="Discussion Title" id="post-title">
+            
+            <div class="new-post-options">
+                <select id="post-category" class="post-category-select">
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="technology">Technology</option>
+                    <option value="education">Education</option>
+                    <option value="career">Career</option>
+                    <option value="science">Science</option>
+                    <option value="humanities">Humanities</option>
+                </select>
+                
+                <div class="anonymous-checkbox">
+                    <input type="checkbox" id="post-anonymous">
+                    <label for="post-anonymous">Post Anonymously</label>
+                </div>
+            </div>
+            
+            <textarea placeholder="Write your discussion post here..." id="post-content"></textarea>
+            
+            <div class="upload-options">
+                <button type="button" class="upload-btn"><i class="fas fa-image"></i> Add Image</button>
+                <button type="button" class="upload-btn"><i class="fas fa-file"></i> Attach File</button>
+            </div>
+            
+            <button onclick="submitPost()"><i class="fas fa-paper-plane"></i> Post Discussion</button>
+        </section>
+    </main>
+    
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Education Hub is a platform dedicated to connecting learners with quality educational resources and fostering a community of knowledge sharing.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="courses.html"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="forums.html"><i class="fas fa-comments"></i> Forums</a></li>
+                    <li><a href="blogs.html"><i class="fas fa-blog"></i> Blogs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Pune, India</li>
+                    <li><i class="fas fa-phone"></i> +91 8010095340</li>
+                    <li><i class="fas fa-envelope"></i> info@educationhub.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subscribe</h4>
+                <p>Stay updated with our latest news and offers.</p>
+                <form class="footer-subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Help Center</a>
+            </div>
+            <p>&copy; 2025 Education Hub. All rights reserved.</p>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+    
+    <!-- Add the footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- JavaScript for forums page functionality -->
+    <script type="module" src="../js/forums.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

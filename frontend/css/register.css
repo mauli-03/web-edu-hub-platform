@@ -1,0 +1,129 @@
+/* Login Page Specific Styles */
+body {
+    background: linear-gradient(135deg, #807f7e, #767675); /* Orange gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+  }
+  
+  .container {
+    background-color: #1a1a1a; /* Dark black background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #ff8c42; /* Orange color for the heading */
+    font-size: 2rem;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    animation: fadeInForm 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeInForm {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff; /* White color for labels */
+    font-size: 1rem;
+  }
+  
+  input {
+    width: 95%;
+    padding: 12px;
+    border: 2px solid #ff8c42; /* Orange border */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #333; /* Dark input background */
+    color: #fff; /* White text color */
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #ff6f42; /* Lighter orange on focus */
+    outline: none;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ee7b07; /* Orange button */
+    color: #1a1a1a; /* Black text */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #ff6f42; /* Lighter orange on hover */
+    transform: translateY(-3px);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  p {
+    margin-top: 20px;
+    color: #fff; /* White text */
+    font-size: 0.9rem;
+  }
+  
+  a {
+    color: #ff8c42; /* Orange link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #ff6f42; /* Lighter orange on hover */
+    text-decoration: underline;
+  }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="25" cy="25" r="24" fill="#4f46e5"/>
+    
+    <!-- Book Shape -->
+    <path d="M15 20V35C15 35.5523 15.4477 36 16 36H34C34.5523 36 35 35.5523 35 35V20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <path d="M15 20L25 15L35 20" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Pages -->
+    <path d="M18 25H32" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 30H28" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</svg> 

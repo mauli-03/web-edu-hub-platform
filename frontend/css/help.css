@@ -1,0 +1,141 @@
+/* Help Page Styles */
+
+/* Custom colors */
+:root {
+    --primary-light: rgba(13, 110, 253, 0.1);
+    --success-light: rgba(25, 135, 84, 0.1);
+    --warning-light: rgba(255, 193, 7, 0.1);
+    --danger-light: rgba(220, 53, 69, 0.1);
+    --info-light: rgba(13, 202, 240, 0.1);
+}
+
+/* Hero section styles */
+.bg-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+
+.search-bar {
+    max-width: 600px;
+}
+
+/* Icon circles for feature cards */
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.bg-primary-light {
+    background-color: var(--primary-light);
+}
+
+.bg-success-light {
+    background-color: var(--success-light);
+}
+
+.bg-warning-light {
+    background-color: var(--warning-light);
+}
+
+.bg-danger-light {
+    background-color: var(--danger-light);
+}
+
+.bg-info-light {
+    background-color: var(--info-light);
+}
+
+/* Card hover effects */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Feature icon styling */
+.feature-icon {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contact info styling */
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Feedback CTA section */
+.feedback-cta {
+    margin-top: 60px;
+}
+
+/* Chat widget button */
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.chat-widget button {
+    width: 60px;
+    height: 60px;
+}
+
+/* Accordion custom styling */
+.accordion {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-light);
+    color: #0d6efd;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .feature-icon, .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Animation for sections */
+section {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
